@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!-- ✅ Gradient background added -->
+<body class="bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 flex justify-center items-center min-h-screen font-sans">
+
+  <div class="bg-white/90 p-8 rounded-2xl shadow-2xl w-full max-w-md backdrop-blur-md border border-blue-100">
+    <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">Register</h2>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <p class="text-{{ 'red' if category=='danger' else 'green' }}-600 mb-2">{{ message }}</p>
+      {% endfor %}
+    {% endwith %}
+
+    <!-- Form -->
+    <form method="POST" class="space-y-4">
+      <input name="name" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Full Name">
+      <input name="email" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Email">
+      <input type="password" name="password" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Password">
+      
+      <select name="user_type" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300">
+        <option value="">Select User Type</option>
+        <option value="job_seeker">Job Seeker</option>
+        <option value="recruiter">Recruiter</option>
+      </select>
+
+      <button class="bg-green-600 w-full text-white p-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-200">
+        Register
+      </button>
+    </form>
+  </div>
+</body>
+</html>

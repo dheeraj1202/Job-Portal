@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome | Job Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Tailwind Config for Colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',     // blue-600
+            secondary: '#22d3ee',   // cyan-400
+            accent: '#f59e42',      // orange-400
+            dark: '#0f172a',        // slate-900
+            light: '#f1f5f9',       // slate-100
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<!-- ✅ Updated gradient background here -->
+<body class="bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 min-h-screen flex items-center justify-center font-sans">
+
+  <main class="bg-white/90 rounded-3xl shadow-2xl p-10 max-w-xl w-full border border-light backdrop-blur-md">
+    <div class="flex flex-col items-center">
+
+      <!-- Heading -->
+      <h1 class="text-4xl md:text-5xl font-extrabold text-dark tracking-tight mb-4 animate-fade-in">
+        Welcome to <span class="text-primary">Job Portal</span>
+      </h1>
+
+      <p class="text-lg text-slate-600 mb-8 animate-bounce">
+  <span class="font-semibold text-accent">Jobs you love.</span> or 
+  <span class="font-semibold text-primary">Talent you need.</span>
+    </p>
+
+
+<!-- CTA Buttons -->
+<div class="flex gap-6 mt-4">
+  <a href="/login"
+     class="glow-blue px-8 py-3 rounded-xl bg-primary text-white font-bold shadow-lg hover:bg-blue-700 transition-all duration-200 focus:ring-4 focus:ring-primary/30 focus:outline-none"
+  >Login</a>
+  
+  <a href="/register"
+     class="glow-cyan px-8 py-3 rounded-xl bg-secondary text-dark font-bold shadow-lg hover:bg-cyan-500 transition-all duration-200 focus:ring-4 focus:ring-secondary/30 focus:outline-none"
+  >Register</a>
+</div>
+
+
+
+  <!-- Optional: Footer -->
+   <footer>
+  <footer class="absolute bottom-4 left-0 w-full text-center text-slate-500 text-sm">
+    &copy; 2025 Job Portal. Crafted By DHEERAJ.
+  </footer>
+  </footer>
+
+  <!-- Animation Keyframes -->
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(-20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .animate-fade-in {
+      animation: fade-in 1s cubic-bezier(.4,0,.2,1) both;
+    }
+    
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6), 0 0 16px rgba(0, 0, 0, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.9), 0 0 24px rgba(15, 15, 15, 0.6);
+    }
+  }
+  .glow-blue {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .glow-cyan {
+    animation: glow 2s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.6), 0 0 16px rgba(34, 211, 238, 0.4);
+  }
+
+
+  </style>
+</body>
+</html>
